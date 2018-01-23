@@ -1,0 +1,48 @@
+apply plugin: "java"
+apply plugin: "eclipse"
+apply plugin: "idea"
+
+group = theGroup
+version = theVersion
+
+repositories {
+    // Standard Maven 
+    mavenCentral()
+}
+
+// Java version selection
+sourceCompatibility = compatibility
+targetCompatibility = compatibility
+
+
+dependencies {
+    // https://mvnrepository.com/artifact/com.netflix.conductor/conductor-core
+    runtime group: 'com.netflix.conductor', name: 'conductor-core', version: "${netflixConductor}"
+
+    // https://mvnrepository.com/artifact/com.netflix.conductor/conductor-client
+    compile group: 'com.netflix.conductor', name: 'conductor-client', version: "${netflixConductor}"
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-annotations
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-annotations', version: "${jacksonAnnotation}"
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.3'
+
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.jaxrs/jackson-jaxrs-json-provider
+    compile group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.9.3'
+
+    //Jetty
+    compile 'org.eclipse.jetty:jetty-server:9.3.9.+'
+    compile 'org.eclipse.jetty:jetty-servlet:9.3.9.+'
+
+    //Guice
+    compile 'com.sun.jersey.contribs:jersey-guice:1.19.+'
+    compile 'com.google.inject:guice:4.+'
+    compile 'com.google.inject.extensions:guice-servlet:4.1.+'
+
+    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
+    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+
+    // https://mvnrepository.com/artifact/com.sun.jersey/jersey-client
+    compile group: 'com.sun.jersey', name: 'jersey-client', version: '1.19.+'
+}

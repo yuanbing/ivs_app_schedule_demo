@@ -1,0 +1,37 @@
+[
+  {
+    "name": "ivs_demo_app_scheduling_task",
+    "retryCount": 3,
+    "timeoutSeconds": 12000,
+    "inputKeys": [
+      "serviceName",
+      "cameras",
+      "algorithms"
+    ],
+    "outputKeys": [
+      "ivsDemoAppScheduledTasks",
+      "ivsDemoAppScheduledTaskInputs"
+    ],
+    "timeoutPolicy": "TIME_OUT_WF",
+    "retryLogic": "FIXED",
+    "retryDelaySeconds": 600,
+    "responseTimeoutSeconds": 3600
+  },
+  {
+    "name": "ivs_demo_app_scheduled_task",
+    "retryCount": 3,
+    "timeoutSeconds": 12000,
+    "inputKeys": [
+      "serviceName",
+      "cameras",
+      "algorithms"
+    ],
+    "outputKeys": [
+      "detectedObjects"
+    ],
+    "timeoutPolicy": "TIME_OUT_WF",
+    "retryLogic": "FIXED",
+    "retryDelaySeconds": 600,
+    "responseTimeoutSeconds": 3600
+  }
+]

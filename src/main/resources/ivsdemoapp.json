@@ -1,0 +1,35 @@
+{
+  "name": "ivs_demo_app",
+  "description": "a workflow for IVS demo application",
+  "version": 1,
+  "tasks": [
+    {
+      "name": "ivs_demo_app_scheduling_task",
+      "taskReferenceName": "ivsDemoAppSchedulingTask",
+      "inputParameters": {
+        "ivsDemoAppInput": "${workflow.input}"
+      },
+      "type": "SIMPLE"
+    },
+    {
+      "name": "ivs_demo_app_scheduled_task_fan_out",
+      "taskReferenceName": "ivsDemoAppScheduledTaskFanOut",
+      "inputParameters": {
+        "scheduledTasks": "ivsDemoAppSchedulingTask.output.tasks",
+        "scheduledTaskInputs": "ivsDemoAppSchedulingTask.output.taskInputs"
+      },
+      "type": "FORK_JOIN_DYNAMIC",
+      "dynamicForkTasksParam": "scheduledTasks",
+      "dynamicForkTasksInputParamName": "scheduledTaskInputs"
+    },
+    {
+      "name": "ivs_demo_app_scheduler_join",
+      "taskReferenceName": "ivs_demo_app_scheduler_join",
+      "type": "JOIN"
+    }
+  ],
+  "outputParameters": {
+    "ivsDemoAppOutput": "${ivs_demo_app_scheduler_join.output}"
+  },
+  "schemaVersion": 2
+}

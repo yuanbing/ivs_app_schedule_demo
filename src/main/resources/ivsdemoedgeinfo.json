@@ -1,0 +1,68 @@
+[
+  {
+    "name": "e1",
+    "services": [
+      {
+        "name": "IvsDemoApp",
+        "version": "1.0"
+      },
+      {
+        "name": "srv2",
+        "version": "1.0"
+      }
+    ],
+    "cameras": [
+      {
+        "cameraId": "c1",
+        "cameraOutputFormat": "PNG"
+      },
+      {
+        "cameraId": "c2",
+        "cameraOutputFormat": "VIDEO_H264"
+      }
+    ],
+    "algorithms": [
+      {
+        "name": "alg1",
+        "version": "1.0"
+      },
+      {
+        "name": "alg2",
+        "version": "1.0"
+      }
+    ]
+  }
+  , {
+    "name": "e2",
+    "services": [
+      {
+        "name": "srv1",
+        "version": "1.0"
+      },
+      {
+        "name": "srv2",
+        "version": "1.0"
+      }
+    ],
+    "cameras": [
+      {
+        "cameraId": "c3",
+        "cameraOutputFormat": "PNG"
+      },
+      {
+        "cameraId": "c4",
+        "cameraOutputFormat": "VIDEO_H264"
+      }
+    ],
+    "algorithms": [
+      {
+        "name": "alg1",
+        "version": "1.0"
+      },
+      {
+        "name": "alg3",
+        "version": "1.0"
+      }
+    ]
+  }
+]
